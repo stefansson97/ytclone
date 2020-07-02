@@ -1,0 +1,19 @@
+.sign-in-btn {
+    border: 1px solid #065fd4;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 2px;
+    color: #065fd4;
+    background-color: transparent;
+    font-weight: bold;
+    outline: none;
+
+    .sign-in-btn-icon {
+        color: #065fd4;
+        font-size: 26px;
+    }
+}
+

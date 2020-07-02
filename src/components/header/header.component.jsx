@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './header.styles.scss';
 import logo from '../../images/header-logo.png';
 import SearchBar from '../search-bar/search-bar.component';
+import SignInButton from '../sign-in-button/sign-in-button.component';
 
 function Header() {
 
@@ -43,10 +44,7 @@ function Header() {
                                 <i className="material-icons">more_vert</i>
                             </div>
                             <div className='sign-in-button'>
-                                <button>
-                                    <i className="material-icons">account_circle</i>
-                                    SIGN IN
-                                </button>
+                                <SignInButton />
                             </div>
                         </div>
                     </div>

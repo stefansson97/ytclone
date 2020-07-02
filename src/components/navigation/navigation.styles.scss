@@ -1,0 +1,94 @@
+.navigation-container {
+    width: 17%;
+    display: flex;
+    flex-flow: column;
+    padding-top: 15px;
+    color: #030303;
+
+    
+
+    hr {
+        width: 100%;
+        height: 1px;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        color: #606060;
+    }
+}
+
+.navigation-line {
+    padding-left: 22px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    
+    p {
+        margin-left: 30px;
+    }
+
+    i, .fa-icons {
+        color: #606060;
+        font-size: 22px;
+    }
+}
+
+.sign-in-call-container {
+    padding-left: 25px;
+    padding-right: 45px;
+    font-size: 14px;
+
+    .sign-in-button {
+       width: 10px;
+       height: 37px; 
+    }
+}
+
+.title {
+    padding-left: 22px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #606060;
+    margin-top: 8px;
+}
+
+.best-of-youtube {
+    
+    img {
+        height: 24px;
+        width: 24px;
+        border-radius: 50%;
+    }
+}
+
+.navigation-bottom-container {
+    padding-left: 22px;
+    padding-top: 5px;
+    font-weight: 500;
+    font-size: 13px;
+
+    a {
+        text-decoration: none;
+        color: #606060;
+        margin-right: 7px;
+    }
+
+    .navigation-bottom {
+        margin-bottom: 10px;
+        display: flex;
+        flex-flow: column;
+
+    }
+
+    .navigation-bottom-row {
+        display: flex;
+        margin-bottom: 2px;
+    }
+
+    .copyright-text {
+        color: #909090;
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+}
