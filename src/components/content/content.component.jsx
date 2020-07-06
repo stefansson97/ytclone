@@ -4,7 +4,9 @@ import './content.styles.scss';
 function Content() {
     return(
         <div className='content'>
-            hhhh
+            <div className='content-title'>
+                <p>Recommended</p>
+            </div>
         </div>
     )
 }

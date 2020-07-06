@@ -1,4 +1,27 @@
 .content {
     background-color: #f9f9f9;
     width: 83%;
+    overflow-y: scroll;
 }
+
+.content-title {
+    margin-left: 30px;
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 2.4rem;
+}
+
+@media only screen and (max-width: 1335px) {
+    .content {
+        width: 93%;
+    }
+}
+
+@media only screen and (max-width: 808px) {
+    .content {
+        width: 100%;
+    }
+}
+
+

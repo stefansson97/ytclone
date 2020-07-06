@@ -1,11 +1,15 @@
 .navigation-container {
+    display: flex;
     width: 17%;
+}
+
+.navigation-container-default {
+    width: 100%;
     display: flex;
     flex-flow: column;
-    padding-top: 15px;
+    padding-top: 10px;
     color: #030303;
-
-    
+    overflow-y: hidden;
 
     hr {
         width: 100%;
@@ -17,6 +21,28 @@
     }
 }
 
+.navigation-container-responsive {
+    display: none;
+    overflow: hidden;
+    flex-flow: column;
+    width: 100%;
+
+    .navigation-line-responsive {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: space-evenly;
+        font-size: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        color: #606060;
+    }
+}
+
+.navigation-container-default:hover {
+    overflow-y: auto;
+}
+
 .navigation-line {
     padding-left: 22px;
     height: 40px;
@@ -25,7 +51,7 @@
     font-size: 14px;
     
     p {
-        margin-left: 30px;
+        margin-left: 25px;
     }
 
     i, .fa-icons {
@@ -34,9 +60,15 @@
     }
 }
 
+.navigation-line:hover {
+    background-color: #F2F2F2;
+    transition: all 0.1s ease;
+    cursor: pointer;
+}
+
 .sign-in-call-container {
     padding-left: 25px;
-    padding-right: 45px;
+    padding-right: 15px;
     font-size: 14px;
 
     .sign-in-button {
@@ -89,6 +121,41 @@
     .copyright-text {
         color: #909090;
         padding-top: 20px;
-        padding-bottom: 10px;
+        padding-bottom: 60px;
+    }
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+background: white; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: #E5E5E5; 
+}
+
+@media only screen and (max-width: 1335px) {
+    .navigation-container {
+        width: 72px;
+    }
+
+    .navigation-container-default {
+        display: none;
+    }
+
+    .navigation-container-responsive {
+        display: flex;
+    }
+}
+
+@media only screen and (max-width: 808px) {
+    .navigation-container {
+        display: none;
     }
 }
