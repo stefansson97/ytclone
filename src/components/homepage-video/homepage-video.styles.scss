@@ -1,0 +1,29 @@
+.video-container {
+    display: flex;
+    flex-flow: column;
+    width: 260px;
+}
+
+.video-preview-img {
+    width: 260px;
+    height: 146px;
+}
+
+.user-avatar-img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+}
+
+.video-preview-top {
+    margin-top: 15px;
+    display: flex;
+}
+
+.video-preview-title {
+    color: #030303;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 0px;
+    margin-left: 10px;
+}

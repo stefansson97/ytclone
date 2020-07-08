@@ -7,24 +7,24 @@ function Navigation() {
         <div className='navigation-container'>
             <div className='navigation-container-default'>
                 <div className='navigation-line'>
-                    <i class="material-icons">home</i>
+                    <i className="material-icons">home</i>
                     <p>Home</p>
                 </div>
                 <div className='navigation-line'>
-                    <i class="material-icons">local_fire_department</i>
+                    <i className="material-icons">local_fire_department</i>
                     <p>Trending</p>
                 </div>
                 <div className='navigation-line'>
-                    <i class="material-icons">subscriptions</i>
+                    <i className="material-icons">subscriptions</i>
                     <p>Subscriptions</p>
                 </div>
                 <hr />
                 <div className='navigation-line'>
-                    <i class="material-icons">video_library</i>
+                    <i className="material-icons">video_library</i>
                     <p>Library</p>
                 </div>
                 <div className='navigation-line'>
-                    <i class="material-icons">restore</i>
+                    <i className="material-icons">restore</i>
                     <p>History</p>
                 </div>
                 <hr />
@@ -64,36 +64,36 @@ function Navigation() {
                 </div>
                 <hr/>
                 <div className='navigation-line'>
-                    <i class="material-icons">add_circle</i>
+                    <i className="material-icons">add_circle</i>
                     <p>Browse channels</p>
                 </div>
                 <hr/>
                 <div className='more-from-youtube'>
                     <p className='title'>MORE FROM YOUTUBE</p>
                     <div className='navigation-line'>
-                        <i class="fab fa-youtube fa-icons"></i>
+                        <i className="fab fa-youtube fa-icons"></i>
                         <p>YouTube Premium</p>
                     </div>
                     <div className='navigation-line'>
-                        <i class="fas fa-stream fa-icons"></i>
+                        <i className="fas fa-stream fa-icons"></i>
                         <p>Live</p>
                     </div>
                 </div>
                 <hr/>
                 <div className='navigation-line'>
-                    <i class="material-icons">settings</i>
+                    <i className="material-icons">settings</i>
                     <p>Settings</p>
                 </div>
                 <div className='navigation-line'>
-                    <i class="material-icons">flag</i>
+                    <i className="material-icons">flag</i>
                     <p>Report history</p>
                 </div>
                 <div className='navigation-line'>
-                    <i class="material-icons">help</i>
+                    <i className="material-icons">help</i>
                     <p>Help</p>
                 </div>
                 <div className='navigation-line'>
-                    <i class="material-icons">feedback</i>
+                    <i className="material-icons">feedback</i>
                     <p>Send feedback</p>
                 </div>
                 <hr/>
@@ -128,23 +128,23 @@ function Navigation() {
             </div>
             <div className='navigation-container-responsive'>
                 <div className='navigation-line-responsive'>
-                    <i class="material-icons">home</i>
+                    <i className="material-icons">home</i>
                     <p>Home</p>
                 </div>
                 <div className='navigation-line-responsive'>
-                    <i class="material-icons">local_fire_department</i>
+                    <i className="material-icons">local_fire_department</i>
                     <p>Trending</p>
                 </div>
                 <div className='navigation-line-responsive'>
-                    <i class="material-icons">subscriptions</i>
+                    <i className="material-icons">subscriptions</i>
                     <p>Subscriptions</p>
                 </div>
                 <div className='navigation-line-responsive'>
-                    <i class="material-icons">video_library</i>
+                    <i className="material-icons">video_library</i>
                     <p>Library</p>
                 </div>
                 <div className='navigation-line-responsive'>
-                    <i class="material-icons">restore</i>
+                    <i className="material-icons">restore</i>
                     <p>History</p>
                 </div>
             </div>
