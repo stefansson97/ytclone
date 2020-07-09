@@ -46,7 +46,7 @@ function Navigation() {
                         <p>Sports</p>
                     </div>
                     <div className='navigation-line'>
-                        <img src='//yt3.ggpht.com/e3mxLnSAd92YiLbGxTJfsOA7_DgK-4Q4lVibHpZ3ZO_erJe-i14HKl1NbC8Q7o-lcWHpa3yHPw=s88-c-k-c0xffffffff-no-nd-rj' alt='gaming-img'></img>
+                        <img src='//yt3.ggpht.com/Wfnq15i2kLz4WMZ6RMUwK-9RRewBL7PxC8r18MhbsKUVoQd3e-z7diiuDDC5gjt8a2RMPKmv3g=s88-c-k-c0xffffffff-no-nd-rj' alt='gaming-img'></img>
                         <p>Gaming</p>
                     </div>
                     <div className='navigation-line'>

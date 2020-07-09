@@ -1,12 +1,13 @@
 .video-container {
     display: flex;
     flex-flow: column;
-    width: 260px;
+    width: 255px;
+    margin-bottom: 40px;
 }
 
 .video-preview-img {
-    width: 260px;
-    height: 146px;
+    width: 255px;
+    height: 143px;
 }
 
 .user-avatar-img {
@@ -26,4 +27,24 @@
     font-weight: 500;
     margin-top: 0px;
     margin-left: 10px;
+}
+
+.video-preview-middle {
+    margin-left: 46px;
+    color: #606060;
+    font-size: 14px;
+    margin-top: 7px;
+    margin-bottom: 1px;
+}
+
+.video-preview-bottom {
+    color: #606060;
+    font-size: 14px;
+    margin-left: 46px;
+    display: flex;
+    
+}
+
+.video-preview-dot {
+    margin: 0px 4px;
 }
