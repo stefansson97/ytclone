@@ -1,0 +1,14 @@
+.results-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 54px;
+    left: 0px;
+}
+
+.results {
+    background-color: #f9f9f9;
+    width: 83%;
+    overflow-y: scroll;
+}

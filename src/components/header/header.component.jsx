@@ -3,15 +3,20 @@ import './header.styles.scss';
 import logo from '../../images/header-logo.png';
 import SearchBar from '../search-bar/search-bar.component';
 import SignInButton from '../sign-in-button/sign-in-button.component';
+import { useHistory } from 'react-router-dom';
 
 function Header() {
 
     const [respSearch, setRespSearch] = useState(false);
+    const history = useHistory();
 
     function handleClick() {
         setRespSearch(!respSearch);
     }
 
+    function handleLogoClick() {
+        history.push('/');
+    }
 
     return (
             <div className='header-container'>
@@ -30,7 +35,7 @@ function Header() {
                                 <div className='hamburger-button-div'></div>
                             </div>
                             <div className='header-logo'>
-                                <img alt='header-logo-img' src={logo}  />
+                                <img alt='header-logo-img' src={logo} className='header-logo-img' onClick={handleLogoClick}  />
                             </div>
                         </div>
                         <div className='col-1-2'>

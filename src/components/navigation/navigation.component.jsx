@@ -38,27 +38,27 @@ function Navigation() {
                 <div className='best-of-youtube'>
                     <p className='title'>BEST OF YOUTUBE</p>
                     <div className='navigation-line'>
-                        <img src='//yt3.ggpht.com/7OWA-S_KJJzZz1qzh7D7uVRJHMwJlEXuNgn54Knl7jssEWVUvuF67Iuotyi4LCjY99bCpuE=s88-c-k-c0xffffffff-no-nd-rj' alt='music-img'></img>
+                        <img src={require('./images/music.jpg')} alt='music-img'></img>
                         <p>Music</p>
                     </div>
                     <div className='navigation-line'>
-                        <img src='//yt3.ggpht.com/Z1AgRXshYVrbhnV12DyOfESDGhIXxZmt7SX59pMia-ZpNwkaXVxlCVypZUp0GeQyl1kct4IRhg=s88-c-k-c0xffffffff-no-nd-rj' alt='sports-img'></img>
+                        <img src={require('./images/sports.jpg')} alt='sports-img'></img>
                         <p>Sports</p>
                     </div>
                     <div className='navigation-line'>
-                        <img src='//yt3.ggpht.com/Wfnq15i2kLz4WMZ6RMUwK-9RRewBL7PxC8r18MhbsKUVoQd3e-z7diiuDDC5gjt8a2RMPKmv3g=s88-c-k-c0xffffffff-no-nd-rj' alt='gaming-img'></img>
+                        <img src={require('./images/gaming.jpg')} alt='gaming-img'></img>
                         <p>Gaming</p>
                     </div>
                     <div className='navigation-line'>
-                        <img src='//yt3.ggpht.com/dTAqfxkze5GTKk8lB87XFli6GBppuoOiCZ49MaucV76-TSFE8m2I4bY8IbHshkdR1ioRdJ4S=s88-c-k-c0xffffffff-no-nd-rj' alt='news-img'></img>
+                        <img src={require('./images/news.jpg')} alt='news-img'></img>
                         <p>News</p>
                     </div>
                     <div className='navigation-line'>
-                        <img src='//yt3.ggpht.com/5HkUAx2SOolanKFGX7Au5O84m4XbzvjpxXowcw2EYjbZmUObb_MzjZiiSDfy3z9ImpC0PCuZIB_dlPnEqQ=s88-c-k-c0xffffffff-no-nd-rj' alt='live-img'></img>
+                        <img src={require('./images/live.jpg')} alt='live-img'></img>
                         <p>Live</p>
                     </div>
                     <div className='navigation-line'>
-                        <img src='//yt3.ggpht.com/H4rKllJjGMbXKMwLWbpekICC625Zy23bu1f3AFsRpYVtvBwgLBf5ntrF9ZxmeQptPdGfVwJI7_E=s88-c-k-c0xffffffff-no-nd-rj' alt='360°-video-img'></img>
+                        <img src={require('./images/360-video.jpg')} alt='360°-video-img'></img>
                         <p>360° Video</p>
                     </div>
                 </div>
