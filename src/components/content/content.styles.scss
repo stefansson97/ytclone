@@ -12,6 +12,41 @@
     line-height: 2.4rem;
 }
 
+.content-title-trending {
+    margin-top: 10px;
+}
+
+.trending-arrow {
+    width: 95%;
+    height: 40px;
+    margin-left: 30px;
+    border-bottom: 4px solid #e0e0e0;
+    color: #909090;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.trending-arrow:hover {
+    background-color: #efefef;
+    transition: all 0.1s ease;
+    cursor: pointer;
+}
+
+.content-hr {
+    height: 4px;
+    margin-top: 0px;
+    width: 95%;
+    border: none;
+    background-color: #e0e0e0;
+}
+
+.trending-hr {
+    margin-top: -20px;
+    margin-bottom: 40px;
+}
+
 @media only screen and (max-width: 1335px) {
     .content {
         width: 93%;
