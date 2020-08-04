@@ -9,9 +9,9 @@ function Content() {
     const [trendingButton, setTrendingButton] = useState(false);
 
     useEffect( () => {
-        fetch('https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=48&regionCode=RS&key=AIzaSyC22PzHEq4j0q7OOp7ZSharUT7bPt5LuCk')
+        fetch('https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=8&regionCode=RS&key=AIzaSyC22PzHEq4j0q7OOp7ZSharUT7bPt5LuCk')
             .then(response => response.json())
-            .then(data => setVideos(data));   
+            .then(data => setVideos(data));
     }, []);
 
     function handleTrendingClick() {
@@ -24,7 +24,7 @@ function Content() {
                 <p>Recommended</p>
             </div>
             <div className='videos-container'>
-            {videos === null ? null : 
+            {videos === null ? null :
                 videos.items.map((video, idx) => {
                     if(idx <= 7) {
                         return <HomepageVideo key={idx} data={video}/>
@@ -39,7 +39,7 @@ function Content() {
                 <p>Trending</p>
             </div>
             <div className='videos-container'>
-            {videos === null ? null : 
+            {videos === null ? null :
                 videos.items.map((video, idx) => {
                     if(idx > 7 && (trendingButton ? (idx < 20) : (idx < 12))) {
                         return <HomepageVideo key={idx} data={video}/>
@@ -52,10 +52,10 @@ function Content() {
             {trendingButton ? (
                 <hr className='content-hr trending-hr'/>
             ) : (
-                <div className='trending-arrow' onClick={handleTrendingClick}><i class="material-icons">keyboard_arrow_down</i></div>
+                <div className='trending-arrow' onClick={handleTrendingClick}><i className="material-icons">keyboard_arrow_down</i></div>
             )}
             <div className='videos-container'>
-            {videos === null ? null : 
+            {videos === null ? null :
                 videos.items.map((video, idx) => {
                     if(idx >= 20) {
                         return <HomepageVideo key={idx} data={video}/>

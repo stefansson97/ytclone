@@ -11,17 +11,17 @@ function SearchBar() {
         setSearchQuery(e.target.value);
     }
 
-    const handleClick = () => {
-        let path = 'results=' + searchQuery; 
+    const handleSubmit = () => {
+        let path = 'results=' + searchQuery;
         history.push(path);
     }
 
     return (
         <div className='header-search'>
-            <form className='header-search' onSubmit={handleClick}>
+            <form className='header-search' onSubmit={handleSubmit}>
                 <input placeholder='Search' onChange={handleChange}></input>
-                <button type='submit'><i className="material-icons">search</i></button>  
-            </form>                 
+                <button type='submit'><i className="material-icons">search</i></button>
+            </form>
         </div>
     )
 }

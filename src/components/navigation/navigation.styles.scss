@@ -49,7 +49,7 @@
     display: flex;
     align-items: center;
     font-size: 14px;
-    
+
     p {
         margin-left: 25px;
     }
@@ -73,7 +73,7 @@
 
     .sign-in-button {
        width: 10px;
-       height: 37px; 
+       height: 37px;
     }
 }
 
@@ -86,7 +86,7 @@
 }
 
 .best-of-youtube {
-    
+
     img {
         height: 24px;
         width: 24px;
@@ -129,20 +129,20 @@
 ::-webkit-scrollbar {
     width: 7px;
 }
-  
+
 /* Track */
 ::-webkit-scrollbar-track {
-background: white; 
+background: white;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-background: #E5E5E5; 
+background: #E5E5E5;
 }
 
 @media only screen and (max-width: 1335px) {
     .navigation-container {
-        width: 72px;
+        width: 7%;
     }
 
     .navigation-container-default {
