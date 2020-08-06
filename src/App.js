@@ -17,7 +17,7 @@ function App() {
         <Header />
         <Switch>
           <Route exact path="/" component={Screen} />
-          <Route path="/results=:searchQuery" component={Results} />
+          <Route path="/results" component={Results} />
         </Switch>
       </div>
     </Router>

@@ -1,6 +1,7 @@
 .search-result-channel-container {
   display: flex;
   align-items: center;
+  padding-left: 50px;
 
   hr {
     height: 1px;
@@ -16,5 +17,20 @@
 .channel-content {
   display: flex;
   flex-flow: column;
-  margin-left: 50px;
+  margin-left: 70px;
+}
+
+.channel-description {
+  width: 60%;
+  font-size: 13px;
+  color: #909090;
+  margin-top: 10px;
+}
+
+.channel-hr {
+  width: 75%;
+  margin-left: 0px;
+  border: none;
+  height: 1px;
+  background-color: #e0e0e0;
 }

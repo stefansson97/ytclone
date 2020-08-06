@@ -1,3 +1,37 @@
 .search-result-video-container {
   display: flex;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.video-thumbnail {
+  width: 246px;
+}
+
+.video-content {
+  display: flex;
+  flex-flow: column;
+  margin-left: 10px;
+}
+
+.video-title {
+  font-size: 18px;
+}
+
+.video-description {
+  width: 60%;
+  font-size: 13px;
+  color: #909090;
+  margin-top: 10px;
+}
+
+.title-and-date-container {
+  display: flex;
+  font-size: 13px;
+  color: #909090;
+  margin-top: 3px;
+
+  .dot {
+    margin: 0px 4px;
+  }
 }

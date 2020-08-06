@@ -1,21 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import './results.styles.scss';
 import Navigation from '../navigation/navigation.component';
-import { useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import SearchResultVideo from '../search-result-video/search-result-video.component';
 import SearchResultChannel from '../search-result-channel/search-result-channel.component';
+import handleSearchQuery from './handleSearchQuery';
 
 function Results() {
 
     const [results, setResults] = useState(null);
-
-    let {searchQuery} = useParams();
-
+    let location = useLocation();
+    let searchQuery = handleSearchQuery(location.search);
+    
     useEffect(() => {
-        fetch('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=3&q=' + searchQuery + '&key=AIzaSyDQ5TNPvR_QKFdRrLC1dPAQRVv1XlJ0xxE')
-        .then(response => response.json())
-        .then(data => setResults(data));
-    }, []);
+        if(searchQuery) {
+            fetch('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=' + searchQuery + '&key=AIzaSyDQ5TNPvR_QKFdRrLC1dPAQRVv1XlJ0xxE')
+          .then(response => response.json())
+          .then(data => setResults(data));
+        }   
+    }, [searchQuery]);
 
     return(
         <div className='results-container'>
@@ -24,10 +27,11 @@ function Results() {
             {results === null ? null :
                 results.items.map((video, idx) => {
                   if(video.id.kind === 'youtube#channel') {
-                    return <SearchResultChannel data={video.snippet}/>
+                    return <SearchResultChannel data={video.snippet} key={idx}/>
                   } else if(video.id.kind === 'youtube#video') {
-                    return <SearchResultVideo data={video.snippet}/>
+                    return <SearchResultVideo data={video.snippet} key={idx}/>
                   }
+                  return null;
                 })
             }
             </div>

@@ -1,25 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './search-bar.styles.scss';
 import { useHistory } from 'react-router-dom';
 
 function SearchBar() {
 
-    const [searchQuery, setSearchQuery] = useState('');
-    const history = useHistory();
+    let history = useHistory();
 
-    const handleChange = (e) => {
-        setSearchQuery(e.target.value);
-    }
-
-    const handleSubmit = () => {
-        let path = 'results=' + searchQuery;
+    const handleSubmit = (e) => {
+        let path = '/results';
         history.push(path);
     }
 
     return (
         <div className='header-search'>
             <form className='header-search' onSubmit={handleSubmit}>
-                <input placeholder='Search' onChange={handleChange}></input>
+                <input placeholder='Search' name='search_query'></input>
                 <button type='submit'><i className="material-icons">search</i></button>
             </form>
         </div>
