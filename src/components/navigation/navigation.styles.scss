@@ -3,9 +3,28 @@
     width: 17%;
 }
 
-.navigation-container-default {
-    width: 100%;
+.nav-toggle-active-navigation {
+    width: 7%;
+}
+
+.default-active {
     display: flex;
+}
+
+.default-inactive {
+    display: none;
+}
+
+.responsive-active {
+    display: flex;
+}
+
+.responsive-inactive {
+    display: none;
+}
+
+.navigation-container-default {
+    width: 100%; 
     flex-flow: column;
     padding-top: 10px;
     color: #030303;
@@ -22,7 +41,6 @@
 }
 
 .navigation-container-responsive {
-    display: none;
     overflow: hidden;
     flex-flow: column;
     width: 100%;

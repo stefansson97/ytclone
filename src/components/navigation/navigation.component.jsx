@@ -1,11 +1,12 @@
 import React from 'react';
 import './navigation.styles.scss';
 import SignInButton from '../sign-in-button/sign-in-button.component';
+import { connect } from 'react-redux';
 
-function Navigation() {
+function Navigation({navigationToggle}) {
     return(
-        <div className='navigation-container'>
-            <div className='navigation-container-default'>
+        <div className={'navigation-container' + (navigationToggle ? ' nav-toggle-active-navigation' : '')}>
+            <div className={'navigation-container-default' + (navigationToggle ? ' default-inactive' : ' default-active')}>
                 <div className='navigation-line'>
                     <i className="material-icons">home</i>
                     <p>Home</p>
@@ -126,7 +127,7 @@ function Navigation() {
                     <p className='copyright-text'>© 2020 Google LLC</p>
                 </div>
             </div>
-            <div className='navigation-container-responsive'>
+            <div className={'navigation-container-responsive' + (navigationToggle ? ' responsive-active' : ' responsive-inactive')}>
                 <div className='navigation-line-responsive'>
                     <i className="material-icons">home</i>
                     <p>Home</p>
@@ -152,4 +153,9 @@ function Navigation() {
     )
 }
 
-export default Navigation;
+const mapStateToProps = (state) => {
+    const { navigationToggle } = state;
+    return navigationToggle;
+};
+
+export default connect(mapStateToProps)(Navigation);

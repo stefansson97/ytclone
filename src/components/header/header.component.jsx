@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { setNavigationToggle } from '../../redux/navigation-toggle/navigation-toggle.actions';
 import './header.styles.scss';
 import logo from '../../images/header-logo.png';
 import SearchBar from '../search-bar/search-bar.component';
 import SignInButton from '../sign-in-button/sign-in-button.component';
 import { useHistory } from 'react-router-dom';
 
-function Header() {
+function Header({setNavigationToggle}) {
 
     const [respSearch, setRespSearch] = useState(false);
     const history = useHistory();
@@ -29,7 +31,7 @@ function Header() {
                     : 
                     <div className='regular-search'>
                         <div className='col-1-8'>
-                            <div className='hamburger-button'>
+                            <div className='hamburger-button' onClick={setNavigationToggle}>
                                 <div className='hamburger-button-div'></div>
                                 <div className='hamburger-button-div'></div>
                                 <div className='hamburger-button-div'></div>
@@ -44,9 +46,9 @@ function Header() {
                         <div className='col-1-3'>
                             <div className='header-icons'>
                                 <i className="material-icons search-icon-responsive hidden" onClick={handleClick}>search</i>
-                                <i className="material-icons">video_call</i>
-                                <i className="material-icons">apps</i>
-                                <i className="material-icons">more_vert</i>
+                                <i className="material-icons header-icon">video_call</i>
+                                <i className="material-icons header-icon">apps</i>
+                                <i className="material-icons header-icon">more_vert</i>
                             </div>
                             <div className='sign-in-button'>
                                 <SignInButton />
@@ -58,4 +60,8 @@ function Header() {
     )
 }
 
-export default Header;
+const mapDispatchToProps = dispatch => ({
+    setNavigationToggle: () => dispatch(setNavigationToggle())
+});
+
+export default connect(null, mapDispatchToProps)(Header);

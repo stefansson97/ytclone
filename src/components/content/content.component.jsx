@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './content.styles.scss';
 import HomepageVideo from '../homepage-video/homepage-video.component';
+import { connect } from 'react-redux';
 
-function Content() {
+function Content({navigationToggle}) {
 
     const [videos, setVideos] = useState(null);
 
@@ -19,7 +20,7 @@ function Content() {
     }
 
     return(
-        <div className='content'>
+        <div className={'content' + (navigationToggle ? ' nav-toggle-active-content' : '')}>
             <div className='content-title'>
                 <p>Recommended</p>
             </div>
@@ -69,4 +70,9 @@ function Content() {
     )
 }
 
-export default Content;
+const mapStateToProps = (state) => {
+    const { navigationToggle } = state;
+    return navigationToggle;
+};
+
+export default connect(mapStateToProps)(Content);
