@@ -8,7 +8,8 @@ function HomepageVideo({data}) {
 
     const channelId = data.snippet.channelId;
 
-
+    //by default api gives us raw title, views and date
+    
     const title = getTitleShorten(data.snippet.title);
     const viewCount = getViewsShorten(data.statistics.viewCount);
     const datePublished = getDateShorten(data.snippet.publishedAt);

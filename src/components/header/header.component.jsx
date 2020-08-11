@@ -9,6 +9,8 @@ import { useHistory } from 'react-router-dom';
 
 function Header({setNavigationToggle}) {
 
+    //implementing resp(onsive)Search state to change header style if window size changes 
+
     const [respSearch, setRespSearch] = useState(false);
     const history = useHistory();
 
@@ -59,6 +61,9 @@ function Header({setNavigationToggle}) {
             </div>
     )
 }
+
+//changing navigationToggle global state in redux when clicking on hamburger button next to logo
+//by default it's false, when it's true the sidebar navigation changes
 
 const mapDispatchToProps = dispatch => ({
     setNavigationToggle: () => dispatch(setNavigationToggle())

@@ -2,10 +2,15 @@
   display: flex;
   align-items: center;
   padding-left: 50px;
+  cursor: pointer;
 
   hr {
     height: 1px;
   }
+}
+
+.search-result-channel-div {
+  width: 79%;
 }
 
 .channel-avatar {
@@ -18,19 +23,29 @@
   display: flex;
   flex-flow: column;
   margin-left: 70px;
+  width: 66%;
 }
 
 .channel-description {
-  width: 60%;
   font-size: 13px;
   color: #909090;
   margin-top: 10px;
 }
 
 .channel-hr {
-  width: 75%;
   margin-left: 0px;
   border: none;
   height: 1px;
   background-color: #e0e0e0;
+}
+
+.search-result-subscribe-btn {
+  width: 100px;
+  height: 37px;
+  background-color: #CC0000;
+  color: #ffffff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-weight: bold;
 }

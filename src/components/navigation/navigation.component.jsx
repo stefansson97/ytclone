@@ -1,13 +1,29 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './navigation.styles.scss';
 import SignInButton from '../sign-in-button/sign-in-button.component';
 import { connect } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 
 function Navigation({navigationToggle}) {
+
+    //using location to check are we at the homepage, if are then need to higlight home tab on sidebar navigation
+    
+    let location = useLocation();
+
+    const [areWeAtHome, setAreWeAtHome] = useState(false);
+
+    useEffect(() => {
+        if(location.pathname === '/') {
+            setAreWeAtHome(true);
+        } else {
+            setAreWeAtHome(false);
+        }
+    }, [location.pathname])
+
     return(
         <div className={'navigation-container' + (navigationToggle ? ' nav-toggle-active-navigation' : '')}>
             <div className={'navigation-container-default' + (navigationToggle ? ' default-inactive' : ' default-active')}>
-                <div className='navigation-line'>
+                <div className={'navigation-line' + (areWeAtHome ? ' we-at-home' : '')}>
                     <i className="material-icons">home</i>
                     <p>Home</p>
                 </div>
@@ -128,7 +144,7 @@ function Navigation({navigationToggle}) {
                 </div>
             </div>
             <div className={'navigation-container-responsive' + (navigationToggle ? ' responsive-active' : ' responsive-inactive')}>
-                <div className='navigation-line-responsive'>
+                <div className={'navigation-line-responsive' + (areWeAtHome ? ' we-at-home-responsive' : '')}>
                     <i className="material-icons">home</i>
                     <p>Home</p>
                 </div>
@@ -152,6 +168,8 @@ function Navigation({navigationToggle}) {
         </div>
     )
 }
+
+//pulling navigationToggle from redux to toggle between two versions of sidebar navigation 
 
 const mapStateToProps = (state) => {
     const { navigationToggle } = state;

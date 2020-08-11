@@ -9,12 +9,14 @@ import handleSearchQuery from './handleSearchQuery';
 function Results() {
 
     const [results, setResults] = useState(null);
+
+    //using location to get the query string from the URL and setting it as searchQuery
     let location = useLocation();
     let searchQuery = handleSearchQuery(location.search);
     
     useEffect(() => {
         if(searchQuery) {
-            fetch('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=' + searchQuery + '&key=AIzaSyDQ5TNPvR_QKFdRrLC1dPAQRVv1XlJ0xxE')
+            fetch('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=' + searchQuery + '&key=AIzaSyDQ5TNPvR_QKFdRrLC1dPAQRVv1XlJ0xxE')
           .then(response => response.json())
           .then(data => setResults(data));
         }   

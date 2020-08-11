@@ -6,7 +6,7 @@ function SearchBar() {
 
     let history = useHistory();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = () => {
         let path = '/results';
         history.push(path);
     }

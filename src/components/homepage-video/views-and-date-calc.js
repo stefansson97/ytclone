@@ -18,12 +18,19 @@ export const getViewsShorten = (views) => {
 }
 
 export const getDateShorten = (date) => {
+
+    //subtracting time of the upload from the current time and then formatting it 
+    
     let date1 = new Date(date);
     let date2 = new Date();
     const diffTime = Math.abs(date2 - date1);
-    const diffHours = Math.ceil(diffTime / (1000 * 60 * 60)); 
+    
+    //diffTime is in miliseconds
+    
+    const diffHours = Math.floor(diffTime / (1000 * 60 * 60));
+    
     if (diffHours < 1) {
-        const time = Math.floor(diffHours * 60);
+        const time = Math.floor(diffTime / (1000 * 60 ));
         if (time === 1) {
             return time + ' minute ago'
         } else  {

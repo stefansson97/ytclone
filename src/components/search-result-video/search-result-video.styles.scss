@@ -2,16 +2,19 @@
   display: flex;
   margin-top: 20px;
   margin-bottom: 20px;
+  width: 79%;
 }
 
 .video-thumbnail {
   width: 246px;
+  cursor: pointer;
 }
 
 .video-content {
   display: flex;
   flex-flow: column;
   margin-left: 10px;
+  cursor: pointer;
 }
 
 .video-title {
@@ -19,7 +22,6 @@
 }
 
 .video-description {
-  width: 60%;
   font-size: 13px;
   color: #909090;
   margin-top: 10px;

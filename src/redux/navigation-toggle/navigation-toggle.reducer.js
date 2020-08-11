@@ -1,3 +1,7 @@
+
+//using redux to handle clicking the hamburger button in the header
+//it changes between two types of sidebar navigation style and few components depend on it 
+
 import NavigationToggleActionTypes from './navigation-toggle.types';
 
 const INITIAL_STATE = {

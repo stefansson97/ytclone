@@ -25,6 +25,25 @@
     cursor: pointer;
 }
 
+.hamburger-button:after {
+    content: "";
+    background: #d3d3d3;
+    display: block;
+    position: absolute;
+    padding-top: 3%;
+    padding-left: 3%;
+    opacity: 0;
+    transition: all 0.4s;
+    border-radius: 50%;
+}
+  
+.hamburger-button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s;
+}
+
 .hamburger-button-div {
     height: 2px;
     width: 18px;

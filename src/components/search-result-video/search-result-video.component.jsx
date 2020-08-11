@@ -2,6 +2,8 @@ import React from 'react';
 import './search-result-video.styles.scss';
 import { getDateShorten } from '../homepage-video/views-and-date-calc.js';
 
+//when we get a video as an answer of search
+
 function SearchResultVideo({data}) {
   return(
     <div className='search-result-video-container'>

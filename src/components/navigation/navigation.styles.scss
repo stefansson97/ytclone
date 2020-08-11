@@ -23,6 +23,35 @@
     display: none;
 }
 
+.we-at-home {
+    background-color: #E5E5E5; 
+
+
+    .material-icons {
+        color: #FF0000;
+    }
+
+    p {
+        font-weight: 500;
+    }
+}
+
+.we-at-home:hover {
+    background-color: #d3d3d3 !important; 
+    transition: all 0.1s ease;
+    cursor: pointer;
+}
+
+.we-at-home-responsive {
+    .material-icons {
+        color: #FF0000;
+    }
+
+    p {
+        font-weight: 500;
+    }
+}
+
 .navigation-container-default {
     width: 100%; 
     flex-flow: column;
@@ -54,6 +83,12 @@
         padding-top: 10px;
         padding-bottom: 10px;
         color: #606060;
+    }
+
+    .navigation-line-responsive:hover {
+        background-color: #F2F2F2; 
+        transition: all 0.1s ease;
+        cursor: pointer;
     }
 }
 
