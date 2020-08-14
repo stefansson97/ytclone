@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import './homepage-video.styles.scss';
 import { getViewsShorten, getDateShorten, getTitleShorten } from './views-and-date-calc';
+import { useHistory } from 'react-router-dom';
 
 function HomepageVideo({data}) {
 
     const [userAvatar, setUserAvatar] = useState(null);
 
+    let history = useHistory();
     const channelId = data.snippet.channelId;
 
     //by default api gives us raw title, views and date
@@ -20,11 +22,17 @@ function HomepageVideo({data}) {
             .then(data => setUserAvatar(data.items[0].snippet.thumbnails.default.url));   
     }, [channelId]);
 
+    const handleClick = () => {
+        let path = '/watch?v=' + data.id;
+        history.push(path);
+    }
+
     return(
         <div>
+
             {
                 userAvatar ? (
-                    <div className='video-container'>
+                    <div className='video-container' onClick={handleClick}>
                         <img alt='video-preview-img' className='video-preview-img' src={data.snippet.thumbnails.medium.url}></img>
                         <div className='video-preview-top'>
                             <img alt='user-avatar-img' className='user-avatar-img' src={userAvatar}></img>

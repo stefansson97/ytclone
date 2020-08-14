@@ -16,7 +16,7 @@ function Results() {
     
     useEffect(() => {
         if(searchQuery) {
-            fetch('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=' + searchQuery + '&key=AIzaSyDQ5TNPvR_QKFdRrLC1dPAQRVv1XlJ0xxE')
+            fetch('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=2&q=' + searchQuery + '&key=AIzaSyDQ5TNPvR_QKFdRrLC1dPAQRVv1XlJ0xxE')
           .then(response => response.json())
           .then(data => setResults(data));
         }   
@@ -29,9 +29,9 @@ function Results() {
             {results === null ? null :
                 results.items.map((video, idx) => {
                   if(video.id.kind === 'youtube#channel') {
-                    return <SearchResultChannel data={video.snippet} key={idx}/>
+                    return <SearchResultChannel data={video} key={idx}/>
                   } else if(video.id.kind === 'youtube#video') {
-                    return <SearchResultVideo data={video.snippet} key={idx}/>
+                    return <SearchResultVideo data={video} key={idx}/>
                   }
                   return null;
                 })

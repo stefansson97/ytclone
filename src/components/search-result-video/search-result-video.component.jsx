@@ -1,21 +1,30 @@
 import React from 'react';
 import './search-result-video.styles.scss';
 import { getDateShorten } from '../homepage-video/views-and-date-calc.js';
+import { useHistory } from 'react-router-dom';
 
 //when we get a video as an answer of search
 
 function SearchResultVideo({data}) {
+
+  let history = useHistory();
+
+  const handleClick = () => {
+    let path = '/watch?v=' + data.id.videoId;
+    history.push(path);
+  } 
+
   return(
-    <div className='search-result-video-container'>
-      <img alt='video-thumbnail-img' src={data.thumbnails.medium.url} className='video-thumbnail' />
+    <div className='search-result-video-container' onClick={handleClick}>
+      <img alt='video-thumbnail-img' src={data.snippet.thumbnails.medium.url} className='video-thumbnail' />
       <div className='video-content'>
-        <div className='video-title'>{data.title}</div>
+        <div className='video-title'>{data.snippet.title}</div>
         <div className='title-and-date-container'>
-          <div className='channel-title'>{data.channelTitle}</div>
+          <div className='channel-title'>{data.snippet.channelTitle}</div>
           <div className='dot'>•</div>
-          <div className='date-published'>{getDateShorten(data.publishedAt)}</div>
+          <div className='date-published'>{getDateShorten(data.snippet.publishedAt)}</div>
         </div>
-        <div className='video-description'>{data.description}</div>
+        <div className='video-description'>{data.snippet.description}</div>
       </div>
     </div>
   )
