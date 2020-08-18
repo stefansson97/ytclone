@@ -10,7 +10,7 @@ function VideoPageBottomDetails({channelId, channelName, videoDescription}) {
     const [showMore, setShowMore] = useState(false);
 
     useEffect( () => {
-        fetch('https://www.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=' + channelId + '&key=AIzaSyC22PzHEq4j0q7OOp7ZSharUT7bPt5LuCk')
+        fetch('https://www.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=' + channelId + '&key=AIzaSyBruxyIXl5dYfYl43sIFGQYMa2gJAUtHbQ')
             .then(response => response.json())
             .then(data => {
                 setUserAvatar(data.items[0].snippet.thumbnails.default.url);
@@ -21,7 +21,6 @@ function VideoPageBottomDetails({channelId, channelName, videoDescription}) {
     function handleClick() {
         setShowMore(prevValue => !prevValue);
     }
-
 
     return (
         <div className='video-page-bottom-details-container'>

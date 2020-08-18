@@ -1,6 +1,6 @@
 .video-page-div {
     display: flex;
-    flex-flow: column;
+    flex-flow: row;
     width: 100%;
     height: 100%;
     position: fixed;
@@ -10,7 +10,6 @@
     background-color: #F9F9F9;
     padding-left: 35px;
     padding-top: 23px;
-    
 
     iframe {
         width: 100%;
@@ -24,13 +23,13 @@
 }
 
 .embedded-video-container {
-    width: 830px;
+    width: 100%;
     height: 480px;
 }
 
 .video-page-video-data {
-    width: 830px;
-    padding-bottom: 150px;
+    width: 100%;
+    height: 100%;
 
     .video-details {
         display: flex;
@@ -72,3 +71,15 @@
     }
 }
 
+@media only screen and (max-width: 1015px) {
+    .video-page-div {
+        flex-flow: column;
+        position: relative;
+    }
+
+    .video-page-video-data {
+        width: 90%;
+    }
+
+
+}

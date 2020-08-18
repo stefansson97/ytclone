@@ -16,9 +16,9 @@ function Results() {
     
     useEffect(() => {
         if(searchQuery) {
-            fetch('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=2&q=' + searchQuery + '&key=AIzaSyDQ5TNPvR_QKFdRrLC1dPAQRVv1XlJ0xxE')
-          .then(response => response.json())
-          .then(data => setResults(data));
+          fetch('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=' + searchQuery + '&key=AIzaSyDQ5TNPvR_QKFdRrLC1dPAQRVv1XlJ0xxE')
+            .then(response => response.json())
+            .then(data => setResults(data));
         }   
     }, [searchQuery]);
 

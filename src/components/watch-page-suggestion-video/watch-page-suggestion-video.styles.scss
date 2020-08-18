@@ -1,0 +1,40 @@
+.watch-page-suggestion-video {
+    display: flex;
+    margin-bottom: 10px;
+
+    .video-thumbnail {
+        width: 180px;
+        height: 101px;
+        cursor: pointer;
+      }
+      
+      .video-content {
+        display: flex;
+        flex-flow: column;
+        margin-left: 10px;
+        cursor: pointer;
+        width: 100%;
+      }
+      
+      .video-title {
+        font-size: 14px;
+        margin-top: 0px;
+        font-weight: 500;
+      }
+      
+      .title-and-date-container {
+        display: flex;
+        flex-flow: column;
+        font-size: 13px;
+        color: #909090;
+        margin-top: 5px;
+
+        .date-published {
+          margin-top: 5px;
+        }
+      
+      }
+}
+
+
+  

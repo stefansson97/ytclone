@@ -1,6 +1,11 @@
+.video-page-bottom-details-container {
+    padding-bottom: 100px;
+}
+
 .video-page-bottom-details {
     display: flex;
     flex-flow: column;
+    height: 100%;
 
     .vpbd-video-description {
         white-space: pre-line;
@@ -65,4 +70,10 @@
     outline: none;
     color: #606060;
     font-weight: bold;
+}
+
+@media only screen and (max-width: 1015px) {
+    .video-page-bottom-details-container {
+        padding-bottom: 10px;
+    }
 }

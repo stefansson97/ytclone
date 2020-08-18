@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { handleVideoId, numberWithCommas, formatDate, getLikesShorten } from './handleVideo';
 import './watch.styles.scss';
 import VideoPageBottomDetails from '../video-page-bottom-details/video-page-bottom-details.component';
+import WatchPageSuggestions from '../watch-page-suggestions/watch-page-suggestions.component';
 
 function Watch() {
 
@@ -13,7 +14,7 @@ function Watch() {
     let id = handleVideoId(location.search);
     
     useEffect(() => {
-        fetch('https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics%2Cplayer&part=player&id=' + id + '&key=AIzaSyC22PzHEq4j0q7OOp7ZSharUT7bPt5LuCk')
+        fetch('https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics%2Cplayer&part=player&id=' + id + '&key=AIzaSyBruxyIXl5dYfYl43sIFGQYMa2gJAUtHbQ')
             .then(response => response.json())
             .then(data => setVideo(data.items[0]));
     }, [id]);
@@ -53,6 +54,7 @@ function Watch() {
                     <VideoPageBottomDetails channelId={video.snippet.channelId} channelName={video.snippet.channelTitle} videoDescription={video.snippet.description}/>
                 </div>
             )}
+            <WatchPageSuggestions channelTitle={video ? video.snippet.channelTitle : null} videoTitle={video ? video.snippet.title : null} id={id} />
         </div>
     )
 }

@@ -1,0 +1,13 @@
+.watch-page-suggestions {
+    margin-left: 20px;
+    margin-right: 100px;
+    display: flex;
+    flex-flow: column;
+    height: 1080px;  
+}
+
+@media only screen and (max-width: 1015px) {
+    .watch-page-suggestions {
+        margin-left: 0px;
+    }
+}
