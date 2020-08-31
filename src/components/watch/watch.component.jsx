@@ -14,7 +14,7 @@ function Watch() {
     let id = handleVideoId(location.search);
     
     useEffect(() => {
-        fetch('https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics%2Cplayer&part=player&id=' + id + '&key=AIzaSyBruxyIXl5dYfYl43sIFGQYMa2gJAUtHbQ')
+        fetch('https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics%2Cplayer&part=player&id=' + id + '&key=AIzaSyBSlBq0R6mMBULGpb3yZUZwjftdaVBac9Y')
             .then(response => response.json())
             .then(data => setVideo(data.items[0]));
     }, [id]);
@@ -54,7 +54,8 @@ function Watch() {
                     <VideoPageBottomDetails channelId={video.snippet.channelId} channelName={video.snippet.channelTitle} videoDescription={video.snippet.description}/>
                 </div>
             )}
-            <WatchPageSuggestions channelTitle={video ? video.snippet.channelTitle : null} videoTitle={video ? video.snippet.title : null} id={id} />
+            {video ? <WatchPageSuggestions channelTitle={video ? video.snippet.channelTitle : null} videoTitle={video ? video.snippet.title : null} id={id} /> : null}
+            
         </div>
     )
 }

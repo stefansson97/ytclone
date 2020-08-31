@@ -10,7 +10,7 @@ function VideoPageBottomDetails({channelId, channelName, videoDescription}) {
     const [showMore, setShowMore] = useState(false);
 
     useEffect( () => {
-        fetch('https://www.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=' + channelId + '&key=AIzaSyBruxyIXl5dYfYl43sIFGQYMa2gJAUtHbQ')
+        fetch('https://www.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=' + channelId + '&key=AIzaSyBSlBq0R6mMBULGpb3yZUZwjftdaVBac9Y')
             .then(response => response.json())
             .then(data => {
                 setUserAvatar(data.items[0].snippet.thumbnails.default.url);

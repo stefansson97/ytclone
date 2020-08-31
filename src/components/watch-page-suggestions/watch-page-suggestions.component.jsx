@@ -7,16 +7,28 @@ function WatchPageSuggestions({videoTitle, channelTitle, id}) {
 
     let searchQuery = videoTitle + ' ' + channelTitle;
 
+    //there's a posibility search query composed of video title and channel title won't get us back many results
+    //in case if number of results is lower than 5, we fetch again but now our search query is only channel title
+    
     useEffect(() => {
-        fetch('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=' + searchQuery + '&key=AIzaSyBruxyIXl5dYfYl43sIFGQYMa2gJAUtHbQ')
+        if(searchQuery !== null) {
+        fetch('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=' + searchQuery + '&key=AIzaSyBSlBq0R6mMBULGpb3yZUZwjftdaVBac9Y')
             .then(response => response.json())
-            .then(data => setSuggestions(data));
-    }, [searchQuery])
+            .then(data => {
+                if(Object.keys(data)[0] !== 'error' && data.items.length >= 5) {
+                    setSuggestions(data);
+                } else {
+                    return fetch('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=' + channelTitle + '&key=AIzaSyBSlBq0R6mMBULGpb3yZUZwjftdaVBac9Y')
+                            .then(response => response.json())
+                            .then(data => setSuggestions(data));
+                }
+            });
+    }}, [searchQuery, channelTitle])
 
     return (
         <div className='watch-page-suggestions'>
             {suggestions ? (suggestions.items.filter(suggestion => suggestion.id.kind === 'youtube#video' && suggestion.id.videoId !== id)
-                .map((video, idx) => <WatchPageSuggestionVideo key={idx} data={video} />)) : null}
+                .map(video => <WatchPageSuggestionVideo key={video.id.videoId} data={video} />)) : null}
         </div>
     )
 }

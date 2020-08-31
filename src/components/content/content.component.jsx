@@ -10,7 +10,7 @@ function Content({navigationToggle}) {
     const [trendingButton, setTrendingButton] = useState(false);
 
     useEffect( () => {
-        fetch('https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=2&regionCode=RS&key=AIzaSyC22PzHEq4j0q7OOp7ZSharUT7bPt5LuCk')
+        fetch('https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=24&regionCode=RS&key=AIzaSyC22PzHEq4j0q7OOp7ZSharUT7bPt5LuCk')
             .then(response => response.json())
             .then(data => setVideos(data));
     }, []);
@@ -28,7 +28,7 @@ function Content({navigationToggle}) {
             {videos === null ? null :
                 videos.items.map((video, idx) => {
                     if(idx <= 7) {
-                        return <HomepageVideo key={idx} data={video}/>
+                        return <HomepageVideo key={video.id} data={video}/>
                     } else {
                         return null;
                     }
@@ -43,7 +43,7 @@ function Content({navigationToggle}) {
             {videos === null ? null :
                 videos.items.map((video, idx) => {
                     if(idx > 7 && (trendingButton ? (idx < 20) : (idx < 12))) {
-                        return <HomepageVideo key={idx} data={video}/>
+                        return <HomepageVideo key={video.id} data={video}/>
                     } else {
                         return null;
                     }
@@ -59,7 +59,7 @@ function Content({navigationToggle}) {
             {videos === null ? null :
                 videos.items.map((video, idx) => {
                     if(idx >= 20) {
-                        return <HomepageVideo key={idx} data={video}/>
+                        return <HomepageVideo key={video.id} data={video}/>
                     } else {
                         return null;
                     }

@@ -27,11 +27,11 @@ function Results() {
             <Navigation />
             <div className='results'>
             {results === null ? null :
-                results.items.map((video, idx) => {
+                results.items.map(video => {
                   if(video.id.kind === 'youtube#channel') {
-                    return <SearchResultChannel data={video} key={idx}/>
+                    return <SearchResultChannel data={video} key={video.id.channelId}/>
                   } else if(video.id.kind === 'youtube#video') {
-                    return <SearchResultVideo data={video} key={idx}/>
+                    return <SearchResultVideo data={video} key={video.id.videoId}/>
                   }
                   return null;
                 })
