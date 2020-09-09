@@ -14,7 +14,7 @@ function SearchBar() {
     return (
         <div className='header-search'>
             <form className='header-search' onSubmit={handleSubmit}>
-                <input placeholder='Search' name='search_query'></input>
+                <input placeholder='Search' data-testid='hdr-srch-inpt' name='search_query'></input>
                 <button type='submit'><i className="material-icons">search</i></button>
             </form>
         </div>

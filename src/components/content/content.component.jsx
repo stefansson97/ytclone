@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import './content.styles.scss';
 import HomepageVideo from '../homepage-video/homepage-video.component';
-import { connect } from 'react-redux';
+import { useNavbarStyle } from '../../store/NavbarContext';
 
-function Content({navigationToggle}) {
+function Content() {
 
     const [videos, setVideos] = useState(null);
 
     const [trendingButton, setTrendingButton] = useState(false);
+
+    let navStyle = useNavbarStyle();
 
     useEffect( () => {
         fetch('https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=24&regionCode=RS&key=AIzaSyC22PzHEq4j0q7OOp7ZSharUT7bPt5LuCk')
@@ -20,7 +22,7 @@ function Content({navigationToggle}) {
     }
 
     return(
-        <div className={'content' + (navigationToggle ? ' nav-toggle-active-content' : '')}>
+        <div className={'content' + (navStyle ? ' nav-toggle-active-content' : '')}>
             <div className='content-title'>
                 <p>Recommended</p>
             </div>
@@ -70,11 +72,4 @@ function Content({navigationToggle}) {
     )
 }
 
-//pulling navigationToggle from redux to change component style (width) if it's true or false
-
-const mapStateToProps = (state) => {
-    const { navigationToggle } = state;
-    return navigationToggle;
-};
-
-export default connect(mapStateToProps)(Content);
+export default Content;

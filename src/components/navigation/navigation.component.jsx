@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import './navigation.styles.scss';
 import SignInButton from '../sign-in-button/sign-in-button.component';
-import { connect } from 'react-redux';
 import { useLocation } from 'react-router-dom';
+import { useNavbarStyle } from '../../store/NavbarContext';
 
-function Navigation({navigationToggle}) {
+function Navigation() {
 
     //using location to check are we at the homepage, if are then need to higlight home tab on sidebar navigation
     
     let location = useLocation();
+
+    let navStyle = useNavbarStyle();
 
     const [areWeAtHome, setAreWeAtHome] = useState(false);
 
@@ -21,8 +23,32 @@ function Navigation({navigationToggle}) {
     }, [location.pathname])
 
     return(
-        <div className={'navigation-container' + (navigationToggle ? ' nav-toggle-active-navigation' : '')}>
-            <div className={'navigation-container-default' + (navigationToggle ? ' default-inactive' : ' default-active')}>
+        <div className={'navigation-container' + (navStyle ? ' nav-toggle-active-navigation' : '')}>
+            {navStyle ? (
+                    <div className='navigation-container-responsive'>
+                    <div className={'navigation-line-responsive' + (areWeAtHome ? ' we-at-home-responsive' : '')}>
+                        <i className="material-icons">home</i>
+                        <p>Home</p>
+                    </div>
+                    <div className='navigation-line-responsive'>
+                        <i className="material-icons">local_fire_department</i>
+                        <p>Trending</p>
+                    </div>
+                    <div className='navigation-line-responsive'>
+                        <i className="material-icons">subscriptions</i>
+                        <p>Subscriptions</p>
+                    </div>
+                    <div className='navigation-line-responsive'>
+                        <i className="material-icons">video_library</i>
+                        <p>Library</p>
+                    </div>
+                    <div className='navigation-line-responsive'>
+                        <i className="material-icons">restore</i>
+                        <p>History</p>
+                    </div>
+                </div>
+            ) : (
+                <div className='navigation-container-default'>
                 <div className={'navigation-line' + (areWeAtHome ? ' we-at-home' : '')}>
                     <i className="material-icons">home</i>
                     <p>Home</p>
@@ -143,37 +169,11 @@ function Navigation({navigationToggle}) {
                     <p className='copyright-text'>© 2020 Google LLC</p>
                 </div>
             </div>
-            <div className={'navigation-container-responsive' + (navigationToggle ? ' responsive-active' : ' responsive-inactive')}>
-                <div className={'navigation-line-responsive' + (areWeAtHome ? ' we-at-home-responsive' : '')}>
-                    <i className="material-icons">home</i>
-                    <p>Home</p>
-                </div>
-                <div className='navigation-line-responsive'>
-                    <i className="material-icons">local_fire_department</i>
-                    <p>Trending</p>
-                </div>
-                <div className='navigation-line-responsive'>
-                    <i className="material-icons">subscriptions</i>
-                    <p>Subscriptions</p>
-                </div>
-                <div className='navigation-line-responsive'>
-                    <i className="material-icons">video_library</i>
-                    <p>Library</p>
-                </div>
-                <div className='navigation-line-responsive'>
-                    <i className="material-icons">restore</i>
-                    <p>History</p>
-                </div>
-            </div>
+            )}
+            
+
         </div>
     )
 }
 
-//pulling navigationToggle from redux to toggle between two versions of sidebar navigation 
-
-const mapStateToProps = (state) => {
-    const { navigationToggle } = state;
-    return navigationToggle;
-};
-
-export default connect(mapStateToProps)(Navigation);
+export default Navigation;

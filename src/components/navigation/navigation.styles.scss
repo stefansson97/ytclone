@@ -7,22 +7,6 @@
     width: 7%;
 }
 
-.default-active {
-    display: flex;
-}
-
-.default-inactive {
-    display: none;
-}
-
-.responsive-active {
-    display: flex;
-}
-
-.responsive-inactive {
-    display: none;
-}
-
 .we-at-home {
     background-color: #E5E5E5; 
 
@@ -54,6 +38,7 @@
 
 .navigation-container-default {
     width: 100%; 
+    display: flex;
     flex-flow: column;
     padding-top: 10px;
     color: #030303;
@@ -71,6 +56,7 @@
 
 .navigation-container-responsive {
     overflow: hidden;
+    display: flex;
     flex-flow: column;
     width: 100%;
 
