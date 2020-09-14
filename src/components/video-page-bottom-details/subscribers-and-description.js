@@ -4,16 +4,22 @@ export const getSubscribersShorten = (subscribers) => {
         return (subscribers + ' subscribers');
     } else if(len === 4) {
         return Math.round((subscribers / 100) / 10 * 100) / 100 + 'K subscribers';
-    } else if(len === 5 || len === 6) {
-        return Math.round((subscribers / 1000) * 100) / 100 + 'K subscribers';
+    } else if(len === 5) {
+        return Math.round((subscribers / 1000) * 10) / 10 + 'K subscribers';
+    } else if(len === 6) {
+        return Math.round(subscribers / 1000) + 'K subscribers';
     } else if(len === 7 ) {
         return Math.round((subscribers / 100000) / 10 * 100) / 100 + 'M subscribers'
-    } else if(len === 8 || len === 9) {
-        return Math.round((subscribers / 1000000) * 100) / 100 + 'M subscribers';
+    } else if(len === 8) {
+        return Math.round((subscribers / 1000000) * 10) / 10 + 'M subscribers';
+    } else if(len === 9) {
+        return Math.round(subscribers / 1000000) + 'M subscribers';
     } else if(len === 10) {
         return Math.round((subscribers / 100000000) / 10 * 100) / 100 + 'B subscribers';
-    } else if (len === 11 || len === 12) {
-        return Math.round((subscribers / 1000000000) * 100) / 100 + 'B subscribers';
+    } else if (len === 11) {
+        return Math.round((subscribers / 1000000000) * 10) / 10 + 'B subscribers';
+    } else if(len === 12) {
+        return Math.round(subscribers / 1000000000) + 'B subscribers';
     }
 }
 

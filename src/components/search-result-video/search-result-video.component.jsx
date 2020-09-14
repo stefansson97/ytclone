@@ -22,7 +22,7 @@ function SearchResultVideo({data}) {
         <div className='title-and-date-container'>
           <div className='channel-title'>{data.snippet.channelTitle}</div>
           <div className='dot'>•</div>
-          <div className='date-published'>{getDateShorten(data.snippet.publishedAt)}</div>
+          <div className='date-published'>{getDateShorten(new Date(data.snippet.publishedAt), new Date())}</div>
         </div>
         <div className='video-description'>{data.snippet.description}</div>
       </div>

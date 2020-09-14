@@ -14,7 +14,7 @@ function HomepageVideo({data}) {
     
     const title = getTitleShorten(data.snippet.title);
     const viewCount = getViewsShorten(data.statistics.viewCount);
-    const datePublished = getDateShorten(data.snippet.publishedAt);
+    const datePublished = getDateShorten(new Date(data.snippet.publishedAt), new Date());
 
     useEffect( () => {
         fetch('https://www.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=' + channelId + '&key=AIzaSyC22PzHEq4j0q7OOp7ZSharUT7bPt5LuCk')

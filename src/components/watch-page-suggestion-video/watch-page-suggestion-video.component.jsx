@@ -19,7 +19,7 @@ function WatchPageSuggestionVideo({data}) {
                 <div className='video-title'>{data.snippet.title}</div>
                 <div className='title-and-date-container'>
                     <div className='channel-title'>{data.snippet.channelTitle}</div>
-                    <div className='date-published'>{getDateShorten(data.snippet.publishedAt)}</div>
+                    <div className='date-published'>{getDateShorten(new Date(data.snippet.publishedAt), new Date())}</div>
                 </div>
             </div>
         </div>

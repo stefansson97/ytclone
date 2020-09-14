@@ -5,7 +5,7 @@ export function handleVideoId(id) {
 //thanks to https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript
 
 export function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' likes';
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' views';
 }
 
 export function formatDate(publishDate) {
@@ -60,7 +60,7 @@ export function formatDate(publishDate) {
 export const getLikesShorten = (likes) => {
     const len = likes.toString().length;
     if(len === 1 || len === 2 || len === 3) {
-        return (likes);
+        return (likes.toString());
     } else if(len === 4) {
         return Math.floor(likes / 100) / 10 + 'K';
     } else if(len === 5 || len === 6) {

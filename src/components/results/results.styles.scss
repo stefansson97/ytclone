@@ -16,6 +16,23 @@
     padding-bottom: 50px;
 }
 
+.results-filter {
+  margin-top: 10px;
+  width: 79%;
+
+  .filter-icon-text {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #606060;
+    font-weight: 500;
+
+    i {
+      margin-right: 5px;
+    }
+  }
+}
+
 @media only screen and (max-width: 1335px) {
   .results {
     width: 93%;

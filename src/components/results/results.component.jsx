@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom';
 import SearchResultVideo from '../search-result-video/search-result-video.component';
 import SearchResultChannel from '../search-result-channel/search-result-channel.component';
 import handleSearchQuery from './handleSearchQuery';
+import HorizontalLineResultsPage from '../horizonal-line-results-page/horizontal-line-results-page.component';
 
 function Results() {
 
@@ -13,6 +14,7 @@ function Results() {
     //using location to get the query string from the URL and setting it as searchQuery
     let location = useLocation();
     let searchQuery = handleSearchQuery(location.search);
+    console.log(searchQuery);
     
     useEffect(() => {
         if(searchQuery) {
@@ -26,6 +28,13 @@ function Results() {
         <div className='results-container'>
             <Navigation />
             <div className='results'>
+              <div className='results-filter'>
+                <div className='filter-icon-text'>
+                  <i className="material-icons">tune</i>
+                  <div>FILTER</div>
+                </div>
+                <HorizontalLineResultsPage />
+              </div>
             {results === null ? null :
                 results.items.map(video => {
                   if(video.id.kind === 'youtube#channel') {

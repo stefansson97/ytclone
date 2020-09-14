@@ -26,7 +26,7 @@ function Header() {
     }
 
     return (
-            <div className='header-container'>
+            <header>
                 {(respSearch) ? 
                        (<div className='responsive-search' data-testid='hdr-rspnsv-srch'>
                             <i className="material-icons arrow-back" data-testid='hdr-arrow-back' onClick={handleClick}>arrow_back</i>
@@ -61,7 +61,7 @@ function Header() {
                         </div>
                     </div>
                 }
-            </div>
+            </header>
     )
 }
 

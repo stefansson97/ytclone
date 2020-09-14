@@ -17,12 +17,12 @@ export const getViewsShorten = (views) => {
     }
 }
 
-export const getDateShorten = (date) => {
+export const getDateShorten = (publishedDate, realDate) => {
 
     //subtracting time of the upload from the current time and then formatting it 
     
-    let date1 = new Date(date);
-    let date2 = new Date();
+    let date1 = publishedDate;
+    let date2 = realDate;
     const diffTime = Math.abs(date2 - date1);
     
     //diffTime is in miliseconds
