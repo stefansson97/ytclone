@@ -28,8 +28,7 @@ function HomepageVideo({data}) {
     }
 
     return(
-        <div>
-
+        <>
             {
                 userAvatar ? (
                     <div className='video-container' onClick={handleClick}>
@@ -51,7 +50,7 @@ function HomepageVideo({data}) {
                     </div>
                 ) : null
             }
-        </div>
+        </>
     )
 }
 

@@ -1,0 +1,16 @@
+.navigation-bottom {
+    margin-bottom: 10px;
+    display: flex;
+    flex-flow: column;
+}
+
+.navigation-bottom-row {
+    display: flex;
+    margin-bottom: 2px;
+}
+
+a {
+    text-decoration: none;
+    color: #606060;
+    margin-right: 7px;
+}

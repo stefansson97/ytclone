@@ -22,7 +22,7 @@ function Content() {
     }
 
     return(
-        <div className={'content' + (navStyle ? ' nav-toggle-active-content' : '')}>
+        <div className={'content' + (navStyle ? ' nav-toggle-active-content' : ' no-sidebar-and-screen-size-medium')}>
             <div className='content-title'>
                 <p>Recommended</p>
             </div>

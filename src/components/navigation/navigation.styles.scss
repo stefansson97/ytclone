@@ -60,50 +60,13 @@
     flex-flow: column;
     width: 100%;
 
-    .navigation-line-responsive {
-        display: flex;
-        flex-flow: column;
-        align-items: center;
-        justify-content: space-evenly;
-        font-size: 10px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        color: #606060;
-    }
-
-    .navigation-line-responsive:hover {
-        background-color: #F2F2F2; 
-        transition: all 0.1s ease;
-        cursor: pointer;
-    }
+    
 }
 
 .navigation-container-default:hover {
     overflow-y: auto;
 }
 
-.navigation-line {
-    padding-left: 22px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-
-    p {
-        margin-left: 25px;
-    }
-
-    i, .fa-icons {
-        color: #606060;
-        font-size: 22px;
-    }
-}
-
-.navigation-line:hover {
-    background-color: #F2F2F2;
-    transition: all 0.1s ease;
-    cursor: pointer;
-}
 
 .sign-in-call-container {
     padding-left: 25px;
@@ -116,7 +79,7 @@
     }
 }
 
-.title {
+.navigation-title {
     padding-left: 22px;
     font-size: 14px;
     font-weight: 500;
@@ -124,38 +87,12 @@
     margin-top: 8px;
 }
 
-.best-of-youtube {
-
-    img {
-        height: 24px;
-        width: 24px;
-        border-radius: 50%;
-    }
-}
 
 .navigation-bottom-container {
     padding-left: 22px;
     padding-top: 5px;
     font-weight: 500;
     font-size: 13px;
-
-    a {
-        text-decoration: none;
-        color: #606060;
-        margin-right: 7px;
-    }
-
-    .navigation-bottom {
-        margin-bottom: 10px;
-        display: flex;
-        flex-flow: column;
-
-    }
-
-    .navigation-bottom-row {
-        display: flex;
-        margin-bottom: 2px;
-    }
 
     .copyright-text {
         color: #909090;
@@ -182,6 +119,10 @@ background: #E5E5E5;
 @media only screen and (max-width: 1335px) {
     .navigation-container {
         width: 7%;
+    }
+
+    .no-navigation-and-screen-size-medium {
+        width: 0% !important;
     }
 
     .navigation-container-default {
