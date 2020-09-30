@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './video-page-bottom-details.styles.scss';
+import axios from 'axios';
 import {getSubscribersShorten, handleVideoDescription} from './subscribers-and-description';
 import RedSubscribeButton from '../red-subscribe-button/red-subscribe-button.component';
 
@@ -10,11 +11,10 @@ function VideoPageBottomDetails({channelId, channelName, videoDescription}) {
     const [showMore, setShowMore] = useState(false);
 
     useEffect( () => {
-        fetch('https://www.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=' + channelId + '&key=AIzaSyBSlBq0R6mMBULGpb3yZUZwjftdaVBac9Y')
-            .then(response => response.json())
-            .then(data => {
-                setUserAvatar(data.items[0].snippet.thumbnails.default.url);
-                setSubscriberCount(data.items[0].statistics.subscriberCount);
+        axios.get('https://www.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=' + channelId + '&key=AIzaSyBSlBq0R6mMBULGpb3yZUZwjftdaVBac9Y')
+            .then(response => {
+                setUserAvatar(response.data.items[0].snippet.thumbnails.default.url);
+                setSubscriberCount(response.data.items[0].statistics.subscriberCount);
             });   
     }, [channelId]);
 

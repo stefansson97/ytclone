@@ -26,7 +26,7 @@ function SearchBar() {
             <form className='header-search' data-testid='header-search-form' onSubmit={handleSubmit}>
                 <label htmlFor='searchquery'></label>
                 <input placeholder='Search' value={searchQuery} name='search_query' data-testid='header-search-input' onChange={handleChange}></input>
-                <button type='submit'><i className="material-icons">search</i></button>
+                <button type='submit' data-testid='header-search-button'><i className="material-icons">search</i></button>
             </form>
         </div>
     )

@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { useLocation } from 'react-router-dom';
-import { handleVideoId, numberWithCommas, formatDate, getLikesShorten } from './handleVideo';
+import axios from 'axios';
+import { handleVideoId, numberWithCommas, formatDate, getLikesShorten } from './handle-video';
 import './watch.styles.scss';
 import VideoPageBottomDetails from '../video-page-bottom-details/video-page-bottom-details.component';
 import WatchPageSuggestions from '../watch-page-suggestions/watch-page-suggestions.component';
@@ -14,16 +15,15 @@ function Watch() {
     let id = handleVideoId(location.search);
     
     useEffect(() => {
-        fetch('https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics%2Cplayer&part=player&id=' + id + '&key=AIzaSyBSlBq0R6mMBULGpb3yZUZwjftdaVBac9Y')
-            .then(response => response.json())
-            .then(data => setVideo(data.items[0]));
+        axios.get('https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics%2Cplayer&part=player&id=' + id + '&key=AIzaSyBSlBq0R6mMBULGpb3yZUZwjftdaVBac9Y')
+            .then(response => setVideo(response.data.items[0]));
     }, [id]);
 
     return (
         <div className='video-page-div'>
             {video === null ? null : (
                 <div className='video-page-video-data'>
-                    <div className='embedded-video-container' dangerouslySetInnerHTML = { {__html:  video.player.embedHtml ? video.player.embedHtml : ""} } />
+                    <div className='embedded-video-container' data-testid='embedded-video-test-id' dangerouslySetInnerHTML = { {__html:  video.player.embedHtml ? video.player.embedHtml : ""} } />
                     <div className='video-title'>{video.snippet.title}</div>
                     <div className='video-details'>
                         <div className='video-details-left'>

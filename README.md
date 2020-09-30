@@ -1,1 +1,1 @@
-Making a youtube look-a-like with all its most important functionality
+Making a youtube look-a-like with all its most important functionality (searching for videos and watching them)

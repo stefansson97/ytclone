@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import './watch-page-suggestions.styles.scss';
+import axios from 'axios';
 import WatchPageSuggestionVideo from '../watch-page-suggestion-video/watch-page-suggestion-video.component';
 
 function WatchPageSuggestions({videoTitle, channelTitle, id}) {
@@ -12,15 +13,13 @@ function WatchPageSuggestions({videoTitle, channelTitle, id}) {
     
     useEffect(() => {
         if(searchQuery !== null) {
-        fetch('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=' + searchQuery + '&key=AIzaSyBSlBq0R6mMBULGpb3yZUZwjftdaVBac9Y')
-            .then(response => response.json())
-            .then(data => {
-                if(Object.keys(data)[0] !== 'error' && data.items.length >= 5) {
-                    setSuggestions(data);
+        axios.get('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=' + searchQuery + '&key=AIzaSyBSlBq0R6mMBULGpb3yZUZwjftdaVBac9Y')
+            .then(response => {
+                if(Object.keys(response.data)[0] !== 'error' && response.data.items.length >= 5) {
+                    setSuggestions(response.data);
                 } else {
-                    return fetch('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=' + channelTitle + '&key=AIzaSyBSlBq0R6mMBULGpb3yZUZwjftdaVBac9Y')
-                            .then(response => response.json())
-                            .then(data => setSuggestions(data));
+                    return axios.get('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=' + channelTitle + '&key=AIzaSyBSlBq0R6mMBULGpb3yZUZwjftdaVBac9Y')
+                            .then(response => setSuggestions(response.data));
                 }
             });
     }}, [searchQuery, channelTitle])

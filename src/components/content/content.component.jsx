@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './content.styles.scss';
+import axios from 'axios';
 import HomepageVideo from '../homepage-video/homepage-video.component';
 import { useNavbarStyle } from '../../store/NavbarContext';
 
@@ -12,9 +13,8 @@ function Content() {
     let navStyle = useNavbarStyle();
 
     useEffect( () => {
-        fetch('https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=24&regionCode=RS&key=AIzaSyC22PzHEq4j0q7OOp7ZSharUT7bPt5LuCk')
-            .then(response => response.json())
-            .then(data => setVideos(data));
+        axios.get('https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=24&regionCode=RS&key=AIzaSyC22PzHEq4j0q7OOp7ZSharUT7bPt5LuCk')
+            .then(response => setVideos(response.data));
     }, []);
 
     function handleTrendingClick() {

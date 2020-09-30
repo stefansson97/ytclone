@@ -3,7 +3,7 @@ import './search-result-video.styles.scss';
 import { getDateShorten } from '../homepage-video/views-and-date-calc.js';
 import { useHistory } from 'react-router-dom';
 
-//when we get a video as an answer of search
+//when we get a video as a result of searching
 
 function SearchResultVideo({data}) {
 

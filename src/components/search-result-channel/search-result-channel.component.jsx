@@ -3,7 +3,7 @@ import './search-result-channel.styles.scss';
 import RedSubscribeButton from '../red-subscribe-button/red-subscribe-button.component';
 import HorizontalLineResultsPage from '../horizonal-line-results-page/horizontal-line-results-page.component';
 
-//when we get a channel as an answer of search
+//when we get a channel as a result of searching
 
 function SearchResultChannel({data}) {
   return(

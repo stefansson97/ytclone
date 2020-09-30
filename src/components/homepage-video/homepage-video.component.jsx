@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './homepage-video.styles.scss';
+import axios from 'axios';
 import { getViewsShorten, getDateShorten, getTitleShorten } from './views-and-date-calc';
 import { useHistory } from 'react-router-dom';
 
@@ -17,9 +18,8 @@ function HomepageVideo({data}) {
     const datePublished = getDateShorten(new Date(data.snippet.publishedAt), new Date());
 
     useEffect( () => {
-        fetch('https://www.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=' + channelId + '&key=AIzaSyC22PzHEq4j0q7OOp7ZSharUT7bPt5LuCk')
-            .then(response => response.json())
-            .then(data => setUserAvatar(data.items[0].snippet.thumbnails.default.url));   
+        axios.get('https://www.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=' + channelId + '&key=AIzaSyC22PzHEq4j0q7OOp7ZSharUT7bPt5LuCk')
+            .then(response => setUserAvatar(response.data.items[0].snippet.thumbnails.default.url));   
     }, [channelId]);
 
     const handleClick = () => {

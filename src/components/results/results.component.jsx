@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import './results.styles.scss';
+import axios from 'axios';
 import Navigation from '../navigation/navigation.component';
 import { useLocation } from 'react-router-dom';
 import SearchResultVideo from '../search-result-video/search-result-video.component';
 import SearchResultChannel from '../search-result-channel/search-result-channel.component';
-import handleSearchQuery from './handleSearchQuery';
+import handleSearchQuery from './handle-search-query';
 import HorizontalLineResultsPage from '../horizonal-line-results-page/horizontal-line-results-page.component';
 
 function Results() {
@@ -14,13 +15,11 @@ function Results() {
     //using location to get the query string from the URL and setting it as searchQuery
     let location = useLocation();
     let searchQuery = handleSearchQuery(location.search);
-    console.log(searchQuery);
     
     useEffect(() => {
         if(searchQuery) {
-          fetch('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=' + searchQuery + '&key=AIzaSyDQ5TNPvR_QKFdRrLC1dPAQRVv1XlJ0xxE')
-            .then(response => response.json())
-            .then(data => setResults(data));
+          axios.get('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=' + searchQuery + '&key=AIzaSyDQ5TNPvR_QKFdRrLC1dPAQRVv1XlJ0xxE')
+            .then(response => setResults(response.data));
         }   
     }, [searchQuery]);
 
