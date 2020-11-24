@@ -18,7 +18,7 @@ function Results() {
     
     useEffect(() => {
         if(searchQuery) {
-          axios.get('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=' + searchQuery + '&key=AIzaSyDQ5TNPvR_QKFdRrLC1dPAQRVv1XlJ0xxE')
+          axios.get('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=' + searchQuery + '&key=AIzaSyBruxyIXl5dYfYl43sIFGQYMa2gJAUtHbQ')
             .then(response => setResults(response.data));
         }   
     }, [searchQuery]);

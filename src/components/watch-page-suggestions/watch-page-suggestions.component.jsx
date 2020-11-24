@@ -13,12 +13,12 @@ function WatchPageSuggestions({videoTitle, channelTitle, id}) {
     
     useEffect(() => {
         if(searchQuery !== null) {
-        axios.get('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=' + searchQuery + '&key=AIzaSyBSlBq0R6mMBULGpb3yZUZwjftdaVBac9Y')
+        axios.get('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=' + searchQuery + '&key=AIzaSyBruxyIXl5dYfYl43sIFGQYMa2gJAUtHbQ')
             .then(response => {
                 if(Object.keys(response.data)[0] !== 'error' && response.data.items.length >= 5) {
                     setSuggestions(response.data);
                 } else {
-                    return axios.get('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=' + channelTitle + '&key=AIzaSyBSlBq0R6mMBULGpb3yZUZwjftdaVBac9Y')
+                    return axios.get('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=' + channelTitle + '&key=AIzaSyBruxyIXl5dYfYl43sIFGQYMa2gJAUtHbQ')
                             .then(response => setSuggestions(response.data));
                 }
             });

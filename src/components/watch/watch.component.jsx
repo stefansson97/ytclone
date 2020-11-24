@@ -15,7 +15,7 @@ function Watch() {
     let id = handleVideoId(location.search);
     
     useEffect(() => {
-        axios.get('https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics%2Cplayer&part=player&id=' + id + '&key=AIzaSyBSlBq0R6mMBULGpb3yZUZwjftdaVBac9Y')
+        axios.get('https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics%2Cplayer&part=player&id=' + id + '&key=AIzaSyBruxyIXl5dYfYl43sIFGQYMa2gJAUtHbQ')
             .then(response => setVideo(response.data.items[0]));
     }, [id]);
 

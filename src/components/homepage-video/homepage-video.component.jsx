@@ -18,7 +18,7 @@ function HomepageVideo({data}) {
     const datePublished = getDateShorten(new Date(data.snippet.publishedAt), new Date());
 
     useEffect( () => {
-        axios.get('https://www.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=' + channelId + '&key=AIzaSyC22PzHEq4j0q7OOp7ZSharUT7bPt5LuCk')
+        axios.get('https://www.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=' + channelId + '&key=AIzaSyBruxyIXl5dYfYl43sIFGQYMa2gJAUtHbQ')
             .then(response => setUserAvatar(response.data.items[0].snippet.thumbnails.default.url));   
     }, [channelId]);
 

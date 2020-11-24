@@ -13,7 +13,7 @@ function Content() {
     let navStyle = useNavbarStyle();
 
     useEffect( () => {
-        axios.get('https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=24&regionCode=RS&key=AIzaSyC22PzHEq4j0q7OOp7ZSharUT7bPt5LuCk')
+        axios.get('https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=24&regionCode=RS&key=AIzaSyBruxyIXl5dYfYl43sIFGQYMa2gJAUtHbQ')
             .then(response => setVideos(response.data));
     }, []);
 

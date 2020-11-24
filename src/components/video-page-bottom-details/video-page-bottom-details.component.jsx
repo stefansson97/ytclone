@@ -11,7 +11,7 @@ function VideoPageBottomDetails({channelId, channelName, videoDescription}) {
     const [showMore, setShowMore] = useState(false);
 
     useEffect( () => {
-        axios.get('https://www.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=' + channelId + '&key=AIzaSyBSlBq0R6mMBULGpb3yZUZwjftdaVBac9Y')
+        axios.get('https://www.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=' + channelId + '&key=AIzaSyBruxyIXl5dYfYl43sIFGQYMa2gJAUtHbQ')
             .then(response => {
                 setUserAvatar(response.data.items[0].snippet.thumbnails.default.url);
                 setSubscriberCount(response.data.items[0].statistics.subscriberCount);
