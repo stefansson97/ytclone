@@ -11,6 +11,7 @@ import Results from './components/results/results.component';
 import Watch from './components/watch/watch.component';
 import { NavbarProvider } from './store/NavbarContext';
 
+
 function App() {
 
   return (
