@@ -1,7 +1,5 @@
 import { numberWithCommas, formatDate, getLikesShorten } from '../handle-video';
 
-
-
 it('Number of the views should be formatted with commas', () => {
 
     expect(numberWithCommas('2')).toBe('2 views');

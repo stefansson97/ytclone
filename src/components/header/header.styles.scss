@@ -155,3 +155,23 @@ header, .regular-search, .responsive-search {
         visibility: hidden;
     }
 }
+
+
+@media only screen and (max-width: 470px) {
+    .sign-in-button {
+        display: none;
+    }
+
+    .header-icon-video {
+        display: none;
+    }
+
+    .header-icon-apps {
+        display: none;
+    }
+
+    .header-icon-more {
+        display: none;
+    }
+
+}

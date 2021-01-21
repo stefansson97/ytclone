@@ -29,4 +29,15 @@
 }
 
 
+@media only screen and (max-width: 570px) {
+  .search-result-channel-container {
+    flex-direction: column;
+    padding-left: 0px;
+  }
+  
+  .channel-content {
+    margin-left: 0px;
+    text-align: center;
+  }
 
+}

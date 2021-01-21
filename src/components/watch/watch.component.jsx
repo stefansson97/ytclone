@@ -21,6 +21,7 @@ function Watch() {
 
     return (
         <div className='video-page-div'>
+            <>
             {video === null ? null : (
                 <div className='video-page-video-data'>
                     <div className='embedded-video-container' data-testid='embedded-video-test-id' dangerouslySetInnerHTML = { {__html:  video.player.embedHtml ? video.player.embedHtml : ""} } />
@@ -54,8 +55,10 @@ function Watch() {
                     <VideoPageBottomDetails channelId={video.snippet.channelId} channelName={video.snippet.channelTitle} videoDescription={video.snippet.description}/>
                 </div>
             )}
-            {video ? <WatchPageSuggestions channelTitle={video ? video.snippet.channelTitle : null} videoTitle={video ? video.snippet.title : null} id={id} /> : null}
-            
+            </>
+            <>
+            {video ? <WatchPageSuggestions channelTitle={video ? video.snippet.channelTitle : null} videoTitle={video ? video.snippet.title : null} id={id} /> : null}   
+            </>
         </div>
     )
 }

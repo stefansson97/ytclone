@@ -9,7 +9,7 @@
 
 .results {
     background-color: #f9f9f9;
-    width: 83%;
+    width: 100%;
     overflow-y: scroll;
     padding-left: 30px;
     padding-top: 10px;
@@ -33,14 +33,4 @@
   }
 }
 
-@media only screen and (max-width: 1335px) {
-  .results {
-    width: 93%;
-  }
-}
 
-@media only screen and (max-width: 808px) {
-  .results {
-    width: 100%;
-  }
-}

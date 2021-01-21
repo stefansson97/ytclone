@@ -51,9 +51,9 @@ function Header() {
                         <div className='col-1-3'>
                             <div className='header-icons'>
                                 <i className="material-icons search-icon-responsive hidden" onClick={handleClick} data-testid='hdr-resp-srch-btn'>search</i>
-                                <i className="material-icons header-icon">video_call</i>
-                                <i className="material-icons header-icon">apps</i>
-                                <i className="material-icons header-icon">more_vert</i>
+                                <i className="material-icons header-icon header-icon-video">video_call</i>
+                                <i className="material-icons header-icon header-icon-apps">apps</i>
+                                <i className="material-icons header-icon header-icon-more">more_vert</i>
                             </div>
                             <div className='sign-in-button'>
                                 <SignInButton />

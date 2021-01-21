@@ -37,3 +37,19 @@
     margin: 0px 4px;
   }
 }
+
+@media only screen and (max-width: 570px) {
+  .search-result-video-container {
+    flex-direction: column;
+  }
+  
+  .video-thumbnail {
+    width: 212px;
+  }
+
+  .video-content {
+    margin-left: 0px;
+  }
+
+}
+
