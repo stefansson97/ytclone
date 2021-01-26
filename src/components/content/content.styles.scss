@@ -71,9 +71,27 @@
 .videos-container {
     margin-left: 30px;
     width: 95%;
-    display: flex;
-    flex-flow: row wrap;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
     justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 1100px) {
+    .videos-container {
+        grid-template-columns: auto auto auto;
+    }
+}
+
+@media only screen and (max-width: 820px) {
+    .videos-container {
+        grid-template-columns: auto auto;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .videos-container {
+        grid-template-columns: auto;
+    }
 }
 
 
